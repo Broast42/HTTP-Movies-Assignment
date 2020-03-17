@@ -9,6 +9,8 @@ import axios from 'axios';
 const App = () => {
   const [savedList, setSavedList] = useState([]);
   const [movieList, setMovieList] = useState([]);
+  const [isUpdate, setIsUpdate] = useState(false);
+  
 
   const getMovieList = () => {
     axios
@@ -23,7 +25,23 @@ const App = () => {
 
   useEffect(() => {
     getMovieList();
-  }, []);
+  }, [isUpdate]);
+
+  const movieUpdate = (id, item, props) => {
+    axios
+        .put(`http://localhost:5000/api/movies/${id}`, item)
+        .then(res=>{
+          console.log(res);
+          isUpdate ? setIsUpdate(false): setIsUpdate(true);
+          props.history.push(`/`);
+          
+
+        })
+        .catch(err => {
+          console.log(err);
+        });
+
+  };
 
   return (
     <>
@@ -45,7 +63,7 @@ const App = () => {
 
       <Route exact path="/update-movie/:id"
         render = {props => (
-          <Update {...props} movies={movieList} />
+          <Update {...props} movies={movieList} movieUpdate={movieUpdate} />
         )}
       />
     </>

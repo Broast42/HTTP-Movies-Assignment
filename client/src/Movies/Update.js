@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from "react";
 
+
 const Update = (props) => {
 
     const initalState = {
@@ -34,17 +35,18 @@ const Update = (props) => {
     const handleChangeStars = e => {
         setEdit({
             ...edit,
-            //stars: [...edit.stars, e.target.value]
             stars: { ...edit.stars, [e.target.name]: e.target.value}
         })
 
     }
 
+    
+
     console.log(edit);
 
     return(
         <div className="App">
-            <form>
+            <form onSubmit={(e) => {e.preventDefault(); props.movieUpdate(id, edit, props)}}>
                 <input 
                     type="text" 
                     name="title" 
@@ -78,7 +80,8 @@ const Update = (props) => {
                     />
                     
                 )): null }
-            
+
+                <button type="submit">Submit changes</button>
             </form>
         </div>
     );
