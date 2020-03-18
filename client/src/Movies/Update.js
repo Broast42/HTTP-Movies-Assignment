@@ -38,43 +38,56 @@ const Update = (props) => {
     console.log(edit);
 
     return(
-        <div className="App">
+        <div className="form">
             <form onSubmit={(e) => {e.preventDefault(); props.movieUpdate(id, edit, props)}}>
-                <input 
-                    type="text" 
-                    name="title" 
-                    placeholder={item.title} 
-                    defaultValue={item.title || '' }
-                    onChange={handleChange} 
-                />
-                <input 
-                    type="text" 
-                    name="director" 
-                    placeholder="director" 
-                    defaultValue={item.director || ''}
-                    onChange={handleChange}  
-                />
-                <input 
-                    type="text" 
-                    name="metascore" 
-                    placeholder="metascore" 
-                    defaultValue={item.metascore || ''} 
-                    onChange={handleChange} 
-                />
-                
-                {item.stars ? item.stars.map((x,i)=>(
-                    <input
-                        key={i} 
+
+                <div className="formHeader">
+                    <h4>Update {item.title}</h4>
+                </div>
+
+                <div className='formContent'>
+                    <span>Title:</span>
+                    <input 
                         type="text" 
-                        name={i} 
-                        placeholder="stars" 
-                        defaultValue={x || ''}
-                        onChange={handleChangeStars} 
+                        name="title" 
+                        placeholder={item.title} 
+                        defaultValue={item.title || '' }
+                        onChange={handleChange} 
+                    />
+
+                    <span>Director:</span>
+                    <input 
+                        type="text" 
+                        name="director" 
+                        placeholder="director" 
+                        defaultValue={item.director || ''}
+                        onChange={handleChange}  
+                    />
+
+                    <span>Metascore:</span>
+                    <input 
+                        type="text" 
+                        name="metascore" 
+                        placeholder="metascore" 
+                        defaultValue={item.metascore || ''} 
+                        onChange={handleChange} 
                     />
                     
-                )): null }
+                    <span>Stars:</span>
+                    {item.stars ? item.stars.map((x,i)=>(
+                        <input
+                            key={i} 
+                            type="text" 
+                            name={i} 
+                            placeholder="stars" 
+                            defaultValue={x || ''}
+                            onChange={handleChangeStars} 
+                        />
+                        
+                    )): null }
 
-                <button type="submit">Submit changes</button>
+                    <button type="submit">Submit changes</button>
+                </div>
             </form>
         </div>
     );

@@ -69,7 +69,7 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className="">
       <SavedList list={savedList} />
 
       <Route exact path="/"

@@ -6,7 +6,7 @@ function MovieList({ movies }) {
   return (
     <div className="movie-list">
       <div className="App">
-        <Link to={'/add-movie/'}><button>Add a Movie</button></Link>
+        <Link to={'/add-movie/'}><button className="addBtn">Add a Movie</button></Link>
       </div>
       
       {

@@ -28,51 +28,61 @@ const AddMovie = (props) => {
     console.log(add);
 
     return(
-        <div className="App">
+        <div className="form">
             <form onSubmit={(e) => {e.preventDefault(); props.addMovie(add, props)}}>
-                <input
-                    type="text"
-                    name="title"
-                    placeholder="Title"
-                    onChange={handleChange}
-                /> 
+                <div className="formHeader">
+                    <h4>Add a Movie</h4>
+                </div>
 
-                <input
-                    type="text"
-                    name="director"
-                    placeholder="Director"
-                    onChange={handleChange}
-                /> 
+                <div className="formContent">
+                    <input
+                        type="text"
+                        name="title"
+                        placeholder="Title"
+                        onChange={handleChange}
+                    /> 
 
-                <input
-                    type="text"
-                    name="metascore"
-                    placeholder="metascore"
-                    onChange={handleChange}
-                /> 
+                    <input
+                        type="text"
+                        name="director"
+                        placeholder="Director"
+                        onChange={handleChange}
+                    /> 
 
-                <input
-                    type="text"
-                    name="stars"
-                    placeholder="Staring"
-                    onChange={handleChangeStars}
-                />
+                    <input
+                        type="text"
+                        name="metascore"
+                        placeholder="metascore"
+                        onChange={handleChange}
+                    /> 
 
-                <input
-                    type="text"
-                    name="stars"
-                    placeholder="Staring"
-                    onChange={handleChangeStars}
-                /> 
+                    <input
+                        type="text"
+                        name="stars"
+                        placeholder="Staring"
+                        onChange={handleChangeStars}
+                    />
 
-                <input
-                    type="text"
-                    name="stars"
-                    placeholder="Staring"
-                    onChange={handleChangeStars}
-                /> 
+                    <input
+                        type="text"
+                        name="stars"
+                        placeholder="Staring"
+                        onChange={handleChangeStars}
+                    /> 
 
-                <button type='submit'>Add Movie</button>  
+                    <input
+                        type="text"
+                        name="stars"
+                        placeholder="Staring"
+                        onChange={handleChangeStars}
+                    /> 
+
+                    <div>
+                        <button type='submit'>Add Movie</button>
+                    </div>
+                    
+
+                </div>  
             </form>
         </div>
     );
