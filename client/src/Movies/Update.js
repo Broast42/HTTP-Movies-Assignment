@@ -3,13 +3,6 @@ import React, { useState, useEffect} from "react";
 
 const Update = (props) => {
 
-    const initalState = {
-        title: '',
-        director: '',
-        metascore: '',
-        stars: [],
-    }
-
     const id = props.match.params.id;
     const [item, setItem] = useState({});
     const [edit, setEdit] = useState({});

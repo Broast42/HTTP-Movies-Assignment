@@ -4,6 +4,7 @@ import SavedList from "./Movies/SavedList";
 import MovieList from "./Movies/MovieList";
 import Movie from "./Movies/Movie";
 import Update from "./Movies/Update";
+import AddMovie from "./Movies/AddMovie"
 import axios from 'axios';
 
 const App = () => {
@@ -48,15 +49,27 @@ const App = () => {
       .delete(`http://localhost:5000/api/movies/${id}`)
       .then(res => {
         isUpdate ? setIsUpdate(false): setIsUpdate(true);
-          props.history.push(`/`);  
+        props.history.push(`/`);  
       })
       .catch(err => {
         console.log(err);
       });
-  }
+  };
+
+  const addMovie = (movie, props) => {
+    axios
+      .post(`http://localhost:5000/api/movies`, movie)
+      .then(res => {
+        isUpdate ? setIsUpdate(false): setIsUpdate(true);
+        props.history.push(`/`);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
 
   return (
-    <>
+    <div>
       <SavedList list={savedList} />
 
       <Route exact path="/"
@@ -78,7 +91,13 @@ const App = () => {
           <Update {...props} movies={movieList} movieUpdate={movieUpdate} />
         )}
       />
-    </>
+
+      <Route exact path="/add-movie/"
+        render = {props => (
+          <AddMovie {...props} addMovie={addMovie} />
+        )}
+      />
+    </div>
   );
 };
 
