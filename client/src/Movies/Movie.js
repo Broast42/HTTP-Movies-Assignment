@@ -36,6 +36,9 @@ function Movie(props) {
       <div className="update-button" onClick={() => props.history.push(`/update-movie/${match.params.id}`)}>
         Update
       </div>
+      <div className="delete-button" onClick={() => props.delete(match.params.id, props)}>
+        Delete 
+      </div>
     </div>
   );
 }

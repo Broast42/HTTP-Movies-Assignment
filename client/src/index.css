@@ -77,6 +77,20 @@ body {
   background-color: dodgerblue;
   width: 60px;
   text-align: center;
+  cursor: pointer;
+}
+
+.delete-button {
+  position: absolute;
+  top: 95px;
+  right: 25px;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  background-color: darkred;
+  color: white;
+  width: 60px;
+  text-align: center;
+  cursor: pointer;
 }
 
 .save-button:hover {
