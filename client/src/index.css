@@ -22,6 +22,11 @@ a{
   text-align: center;
 }
 
+.card-adjust{
+  width: 75%;
+  margin: 0 auto;
+}
+
 .movie-card {
   background: rgba(225,225,225, 0.8);
   border: 0;

@@ -11,9 +11,11 @@ function MovieList({ movies }) {
       
       {
         movies.map(movie => (
+          <div className="card-adjust">
           <Link key={movie.id} to={`/movies/${movie.id}`}>
             <MovieCard movie={movie} />
           </Link>
+          </div>
         ))
       }
       
