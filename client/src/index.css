@@ -1,12 +1,34 @@
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background: url("bg.jpg") no-repeat center fixed;
+  background-size: 100%; 
   background-color: #f2f2f2;
 }
 
+a{
+  text-decoration: none;
+  color: black;
+}
+
+
+.App{
+  text-align: center;
+}
+
+.card-adjust{
+  width: 75%;
+  margin: 0 auto;
+}
+
 .movie-card {
-  background-color: #fff;
+  background: rgba(225,225,225, 0.8);
   border: 0;
   box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
     0 2px 4px rgba(0, 0, 0, 0.24);
@@ -60,9 +82,47 @@ body {
   border: 1px solid grey;
   padding: 5px 10px;
   background-color: lightseagreen;
+  width: 70px;
+  text-align: center
 }
+
+.update-button {
+  position: absolute;
+  top: 60px;
+  right: 25px;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  background-color: dodgerblue;
+  width: 70px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.delete-button {
+  position: absolute;
+  top: 95px;
+  right: 25px;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  background-color: darkred;
+  color: white;
+  width: 70px;
+  text-align: center;
+  cursor: pointer;
+}
+
 .save-button:hover {
   background-color: green;
+  color: white;
+}
+
+.update-button:hover {
+  background-color:blue;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: red;
   color: white;
 }
 
@@ -71,7 +131,67 @@ body {
   background-color: lightskyblue;
 }
 
+.home-button:hover{
+  background-color: dodgerblue;
+}
+
 .movie-warning {
   color: red;
   text-align: center;
+}
+
+.form{
+  width: 250px;
+  margin: 10px auto;
+  background-color: #fff;
+  border: 0;
+  box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
+    0 2px 4px rgba(0, 0, 0, 0.24);
+  text-align: center;
+}
+
+.formHeader{
+  width: 100%;
+  height: 40px;
+  background: grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formContent{
+  padding: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top:10px;
+}
+
+.formContent input{
+  margin: 10px 0 10px 0;
+  width: 150px;
+}
+
+.formContent button{
+  width: 150px;
+  height: 30px;
+  background: lightseagreen;
+  margin-bottom: 20px;
+  
+}
+
+.formContent button:hover{
+  background: green;
+  color: white;
+}
+
+.addBtn{
+  width: 150px;
+  height: 30px;
+  background: lightseagreen;
+}
+
+.addBtn:hover{
+  background: green;
+  color: white;
 }
